@@ -1,0 +1,1728 @@
+Листинг 2.2. Использование переменных
+public class AssignExample {
+    public static void main(String[] args) {
+        int var1;
+        int var2;
+        var1 = 4096;
+        var2 = var1 / 4;
+        System.out.println("var1 = " + var1);
+        System.out.println("var2 = var1 / 4 = " + var2);
+    }
+}
+
+
+Листинг 2.3. Логические выражения
+public class IfStatementDemo {
+    public static void main(String[] args) {
+        int a, b, c, d;
+        a = 2;
+        b = 3;
+        System.out.println("a равно 2, b равно 3");
+        if (a < b) System.out.println("a меньше b");
+        if (a > b) System.out.println("этот текст вы никогда не увидите");
+        c = a - b;
+        System.out.println("c равно -1");
+        if (c >= 0) System.out.println("c имеет положительное значение");
+        if (c < 0) System.out.println("c имеет отрицательное значение");
+        d = b - a;
+        System.out.println("d равно 1");
+        if (d >= 0) System.out.println("d имеет положительное значение");
+        if (d < 0) System.out.println("d имеет отрицательное значение");
+        if (a + c != b) System.out.println("a плюс с не равняется b");
+        if (a + d == b) System.out.println("a плюс d равняется b");
+    }
+}
+
+
+Листинг 2.4. Цикл for
+public class ForStatementDemo {
+    public static void main(String[] args) {
+        for (int count = 0; count < 5; count++) {
+            System.out.println("Переменная цикла равна " + count);
+        }
+        System.out.println("Цикл окончен");
+    }
+}
+
+
+Листинг 2.5. Блоки кода
+public class BlockDemo {
+    public static void main(String[] args) {
+        double i, j, d;
+        i = 50;
+        j = 150;
+        if (i != 0) {
+            System.out.println("делитель не равен нулю");
+            d = j / i;
+            System.out.println("j / i равно " + d);
+        }
+    }
+}
+
+
+Листинг 2.6. Операции инкремента и декремента над переменной символьного типа
+public class CharArithDemo {
+    public static void main(String[] args) {
+        char ch;
+        ch = 'L';
+        System.out.println("ch равно " + ch);
+        ch++;
+        System.out.println("значение ch изменилось на " + ch);
+        ch = 'Д';
+        ch--;
+        System.out.println("значение ch снова изменилось и равно " + ch);
+    }
+}
+
+Листинг 2.7. Пример работы с вещественными числами
+public class HypotDemo {
+    public static void main(String[] args) {
+        double cathetus1, cathetus2, hypot;
+        cathetus1 = 3;
+        cathetus2 = 4;
+        hypot = Math.sqrt((cathetus1 * cathetus1) + (cathetus2 * cathetus2));
+        System.out.println("длина гипотенузы равна " + hypot);
+    }
+}
+
+
+Листинг 2.8. Демонстрация переменных логического типа
+public class BoolDemo {
+    public static void main(String[] args) {
+        boolean b;
+        b = false;
+        System.out.println("b равно " + b);
+        b = true;
+        System.out.println("b равно " + b);
+        if (b) System.out.println("Как вы думаете, увидите ли вы эту строку?");
+        System.out.println("Выражение 10 > 9 имеет значение " + (10 > 9));
+    }
+}
+
+
+Листинг 2.9. Символы форматирования текста
+public class StrDemo {
+    public static void main(String[] args) {
+        System.out.println("Первая строка\nВторая строка");
+        System.out.println("A\tB\tC");
+        System.out.println("D\tE\tF");
+    }
+}
+
+
+Листинг 2.10. Динамическая инициализация переменной
+public class CylinderVolume {
+    public static void main(String[] args) {
+        double radius = 4;
+        double height = 5;
+        double volume = 3.1416 * radius * radius * height;
+        System.out.println("Объем цилиндра равен " + volume);
+    }
+}
+
+
+Листинг 2.11. Блок как область действия переменных
+public class ScopeDemo {
+    public static void main(String[] args) {
+        int x;
+        x = 1;
+        System.out.println("До вложенного блока: x равно " + x);
+        {
+            int y = 3;
+            System.out.println("Внутренний блок: x равно " + x + ", y равно " + y);
+            x = y * 3;
+        }
+        System.out.println("После вложенного блока: x равно " + x);
+    }
+}
+
+
+Листинг 2.12. Переменные с одинаковыми именами
+public class NestVar {
+    public static void main(String[] args) {
+        int count = 1;
+        System.out.println("count = " + count);
+        {
+            // int count = 2; // Ошибка
+            System.out.println("Первый независимый блок: count = " + count);
+        }
+        int n = 3;
+        System.out.println("Первый независимый блок: n = " + n);
+        {
+            int n = 5; // Ошибка
+            System.out.println("Второй независимый блок: n = " + n);
+        }
+    }
+}
+
+
+Листинг 2.13. Операторы деления
+public class DivisionDemo {
+    public static void main(String[] args) {
+        int iresult, iremain;
+        double dresult, dremain;
+        iresult = 10 / 3;
+        iremain = 10 % 3;
+        System.out.print("частное от деления 10 / 3 равно ");
+        System.out.println(iresult + ", остаток равен " + iremain);
+        dresult = 10.0 / 3.0;
+        dremain = 10.0 % 3.0;
+        System.out.print("частное от деления 10.0 / 3.0 равно ");
+        System.out.println(dresult + ", остаток равен " + dremain);
+    }
+}
+
+
+Листинг 2.14. Пример явного приведения типов
+class ExplicitCast {
+    public static void main(String[] args) {
+        long l = 10;
+        double d = 1;
+        l = (long) d;
+    }
+}
+
+
+Листинг 2.15. Пример приведения типов в выражениях
+class GradualCastDemo {
+    public static void main(String[] args) {
+        byte x, z;
+        int y;
+        x = 5;
+        y = x * x;
+        z = (byte) (x * x);
+    }
+}
+
+
+Листинг 2.16. Пример использования оператора варианта
+class SwitchDemo {
+    public static void main(String[] args) {
+        for (int x = 1; x <= 13; x++) {
+            switch (x) {
+                case 1: case 2: case 12:
+                    System.out.println(x + ": зима");
+                    break;
+                case 3: case 4: case 5:
+                    System.out.println(x + ": весна");
+                    break;
+                case 6: case 7: case 8:
+                    System.out.println(x + ": лето");
+                    break;
+                case 9: case 10: case 11:
+                    System.out.println(x + ": осень");
+                    break;
+                default:
+                    System.out.println(x + ": нет такого месяца");
+            }
+        }
+    }
+}
+
+
+Листинг 2.17. Пример цикла while
+class AlphabetWhileDemo {
+    public static void main(String[] args) {
+        char ch = 'a';
+        while (ch <= 'я') {
+            System.out.println(ch);
+            ch++;
+        }
+    }
+}
+
+
+Листинг 2.18. Пример цикла do...while
+class AlphabetDoWhileDemo {
+    public static void main(String[] args) {
+        char ch = 'Я';
+        do {
+            System.out.println(ch);
+            ch--;
+        } while (ch >= 'А');
+    }
+}
+
+
+Листинг 2.19. Пример выхода из цикла по команде break
+class BreakDemo {
+    public static void main(String[] args) {
+        int nmax = 25;
+        for (int n = 0; n < nmax; n++) {
+            if ((n * n) >= nmax) break;
+            System.out.println("n равно " + n + ", n в квадрате равно " + n * n);
+        }
+        System.out.println("Конец цикла");
+    }
+}
+
+
+Листинг 2.20. Пример команды break с меткой
+class ExtendedBreakDemo {
+    public static void main(String[] args) {
+        for (int i = 1; i < 4; i++) {
+            Блок1: {
+                Блок2: {
+                    Блок3: {
+                        System.out.println("\ni равно " + i);
+                        if (i == 1) break Блок1;
+                        if (i == 2) break Блок2;
+                        if (i == 3) break Блок3;
+                    }
+                    System.out.println("завершен Блок3");
+                }
+                System.out.println("завершен Блок2");
+            }
+            System.out.println("завершен Блок1");
+        }
+        System.out.println("конец цикла for");
+    }
+}
+
+
+Листинг 2.21. Пример команды continue
+class OddNumDemo {
+    public static void main(String[] args) {
+        for (int num = 0; num <= 10; num++) {
+            if ((num % 2) == 0) continue;
+            System.out.println(num);
+        }
+    }
+}
+
+
+Листинг 3.1. Пример использования класса Vehicle
+class Vehicle {
+    int passengers;
+    int wheels;
+    int maxspeed;
+    int burnup;
+}
+
+class VehicleDemo {
+    public static void main(String[] args) {
+        Vehicle car1 = new Vehicle();
+        car1.passengers = 2;
+        car1.wheels = 6;
+        car1.maxspeed = 130;
+        car1.burnup = 30;
+        double distance = car1.maxspeed * 0.5;
+        System.out.print("За полчаса car1 может проехать ");
+        System.out.println(distance + " км.");
+        car1 = null;
+    }
+}
+
+
+Листинг 3.2. Пример использования нескольких экземпляров класса Vehicle
+class MoreVehiclesDemo {
+    public static void main(String[] args) {
+        Vehicle car1 = new Vehicle();
+        car1.passengers = 2;
+        car1.wheels = 6;
+        car1.maxspeed = 130;
+        car1.burnup = 30;
+        Vehicle bus1 = new Vehicle();
+        bus1.passengers = 45;
+        bus1.wheels = 4;
+        bus1.maxspeed = 100;
+        bus1.burnup = 45;
+        double interval = 1.25;
+        double distanceCar = car1.maxspeed * interval;
+        double distanceBus = bus1.maxspeed * interval;
+        System.out.print("car1 может проехать за 1 час 15 мин. расстояние в ");
+        System.out.print(distanceCar + " км с " + car1.passengers);
+        System.out.println(" пассажирами.");
+        System.out.print("bus1 может проехать за 1 час 15 мин. расстояние в ");
+        System.out.print(distanceBus + " км с " + bus1.passengers);
+        System.out.println(" пассажирами.");
+    }
+}
+
+
+Листинг 3.3. Пример использования указателей на объект
+class SimpleVehicle {
+    int passengers;
+}
+
+class RefTypes {
+    public static void main(String[] args) {
+        SimpleVehicle car1, car2;
+        car1 = new SimpleVehicle();
+        car1.passengers = 25;
+        car2 = car1;
+        System.out.println("Количество пассажиров car2 равно " + car2.passengers);
+        car2.passengers = 50;
+        System.out.println("Количество пассажиров car1 равно " + car1.passengers);
+    }
+}
+
+
+Листинг 3.4. Пример использования метода
+class Vehicle {
+    int passengers;
+    int wheels;
+    int maxspeed;
+    int burnup;
+
+    void distance(double interval) {
+        double value = maxspeed * interval;
+        System.out.println("пройдет путь, равный " + value + " км.");
+    }
+}
+
+class VehicleMethodDemo {
+    public static void main(String[] args) {
+        Vehicle car = new Vehicle();
+        car.passengers = 2;
+        car.wheels = 4;
+        car.maxspeed = 130;
+        car.burnup = 30;
+        Vehicle bus = new Vehicle();
+        bus.passengers = 45;
+        bus.wheels = 4;
+        bus.maxspeed = 100;
+        bus.burnup = 25;
+        double time = 0.5;
+        System.out.print("автомобиль с " + car.passengers + " пассажирами ");
+        car.distance(time);
+        System.out.print("автобус с " + bus.passengers + " пассажирами ");
+        bus.distance(time);
+    }
+}
+
+
+Листинг 3.5. Пример метода, возвращающего значение
+class Vehicle {
+    int passengers;
+    int wheels;
+    int maxspeed;
+    int burnup;
+
+    double distance(double interval) {
+        double value = maxspeed * interval;
+        return value;
+    }
+}
+
+class VehicleRetMethod {
+    public static void main(String[] args) {
+        Vehicle car = new Vehicle();
+        car.passengers = 2;
+        car.wheels = 4;
+        car.maxspeed = 130;
+        car.burnup = 30;
+        Vehicle bus = new Vehicle();
+        bus.passengers = 45;
+        bus.wheels = 4;
+        bus.maxspeed = 100;
+        bus.burnup = 25;
+        double time = 0.5;
+        double distanceCar = car.distance(time);
+        double distanceBus = bus.distance(time);
+        System.out.print("автомобиль с " + car.passengers + " пассажирами ");
+        System.out.println("пройдет за полчаса путь " + distanceCar + " км.");
+        System.out.print("автобус с " + bus.passengers + " пассажирами ");
+        System.out.println("пройдет за полчаса путь " + distanceBus + " км.");
+    }
+}
+
+
+Листинг 3.6. Пример конструктора
+class Ten {
+    int x;
+    Ten() {
+        x = 10;
+    }
+}
+
+class TenDemo {
+    public static void main(String[] args) {
+        Ten s1 = new Ten();
+        Ten s2 = new Ten();
+        if (s1.x == s2.x)
+            System.out.println(s1.x + " = " + s2.x);
+    }
+}
+
+
+Листинг 3.7. Пример конструктора с параметрами
+class Number {
+    int x;
+    Number(int num) {
+        x = num;
+    }
+}
+
+class NumberDemo {
+    public static void main(String[] args) {
+        Number t1 = new Number(9);
+        Number t2 = new Number(27);
+        System.out.println(t1.x + " *** " + t2.x);
+    }
+}
+
+
+Листинг 3.8. Еще один пример конструктора с параметрами
+class Vehicle {
+    int passengers;
+    int wheels;
+    int maxspeed;
+    int burnup;
+
+    Vehicle(int p, int w, int ms, int bu) {
+        passengers = p;
+        wheels = w;
+        maxspeed = ms;
+        burnup = bu;
+    }
+
+    double distance(double interval) {
+        double value = maxspeed * interval;
+        return value;
+    }
+}
+
+class VehicleConstrDemo {
+    public static void main(String[] args) {
+        Vehicle car = new Vehicle(2, 4, 130, 30);
+        Vehicle bus = new Vehicle(45, 4, 120, 25);
+        double interval = 1;
+        double distanceCar = car.distance(interval);
+        double distanceBus = bus.distance(interval);
+        System.out.println("Автомобиль с " + car.passengers + " пассажирами " +
+            "проедет за 1 час " + distanceCar + " км.");
+        System.out.println("Автобус с " + bus.passengers + " пассажирами " +
+            "проедет за 1 час " + distanceBus + " км.");
+    }
+}
+
+
+Листинг 3.9. Пример использования ключевого слова this
+class Vehicle {
+    int passengers;
+    int wheels;
+    int maxspeed;
+    int burnup;
+
+    Vehicle(int passengers, int wheels, int maxspeed, int burnup) {
+        this.passengers = passengers;
+        this.wheels = wheels;
+        this.maxspeed = maxspeed;
+        this.burnup = burnup;
+    }
+
+    double distance(double interval) {
+        double value = this.maxspeed * interval;
+        return value;
+    }
+}
+
+
+Листинг 3.10. Пример закрытого члена класса
+class Vehicle {
+    int passengers;
+    int wheels;
+    private int maxspeed;
+    int burnup;
+
+    Vehicle(int passengers, int wheels, int maxspeed, int burnup) {
+        this.passengers = passengers;
+        this.wheels = wheels;
+        this.maxspeed = maxspeed;
+        this.burnup = burnup;
+    }
+
+    double distance(double interval) {
+        double val = this.maxspeed * interval;
+        return val;
+    }
+}
+
+class VehicleAccessDemo {
+    public static void main(String[] args) {
+        Vehicle ferrari = new Vehicle(2, 4, 360, 12);
+        double distance = ferrari.distance(0.5);
+        System.out.println("Ferrari за полчаса проедет " + distance + " км.");
+        // System.out.println("Скорость Ferrari: " + ferrari.maxspeed + " км/ч"); // Ошибка
+    }
+}
+
+
+Листинг 3.11. Пример методов чтения и записи закрытых членов класса
+class Vehicle {
+    int passengers;
+    private int wheels;
+    private int maxspeed;
+    int burnup;
+
+    Vehicle(int passengers, int wheels, int maxspeed, int burnup) {
+        this.passengers = passengers;
+        this.setWheels(wheels);
+        this.maxspeed = maxspeed;
+        this.burnup = burnup;
+    }
+
+    double distance(double interval) {
+        double val = this.maxspeed * interval;
+        return val;
+    }
+
+    int getMaxSpeed() {
+        return this.maxspeed;
+    }
+
+    int getWheels() {
+        return this.wheels;
+    }
+
+    void setWheels(int wheels) {
+        if ((wheels < 1) || (wheels > 24)) {
+            System.out.println("Неверно указано число колес.");
+            return;
+        }
+        this.wheels = wheels;
+    }
+}
+
+class VehicleGetSetMethod {
+    public static void main(String[] args) {
+        Vehicle ferrari = new Vehicle(2, -2, 360, 12);
+        System.out.println("Max скорость: " + ferrari.getMaxSpeed() + " км/ч");
+        System.out.println("Число колес: " + ferrari.getWheels());
+        ferrari.setWheels(4);
+        System.out.println("Число колес (повторно): " + ferrari.getWheels());
+    }
+}
+
+
+Листинг 3.12. Пример передачи параметров по значению
+class ParaByValue {
+    void callByVal(int x, int y) {
+        x = x + y;
+        y = y + 1;
+        System.out.println("x = " + x);
+        System.out.println("y = " + y);
+    }
+}
+
+class ParaByValueDemo {
+    public static void main(String[] args) {
+        int a = 2;
+        int b = 3;
+        ParaByValue test = new ParaByValue();
+        test.callByVal(a, b);
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+    }
+}
+
+
+Листинг 3.13. Пример передачи параметра по ссылке
+class ParaByRef {
+    int x, y;
+
+    ParaByRef(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    void callByRef(ParaByRef o) {
+        o.x = o.x + this.x;
+        o.y = o.y + this.y;
+    }
+}
+
+class ParaByRefDemo {
+    public static void main(String[] args) {
+        ParaByRef p = new ParaByRef(2, 3);
+        ParaByRef q = new ParaByRef(3, 2);
+        System.out.println("q.x = " + q.x);
+        System.out.println("q.y = " + q.y);
+        p.callByRef(q);
+        System.out.println("q.x = " + q.x);
+        System.out.println("q.y = " + q.y);
+    }
+}
+
+
+Листинг 3.14. Пример перегружаемых методов
+class Basket {
+    void pay(double money) {
+        System.out.println("Оплачено наличными: " + money);
+    }
+
+    void pay(String cardNum) {
+        System.out.println("Оплачено по кредитной карте #" + cardNum);
+    }
+
+    void pay(String accountNum, String bankCode) {
+        System.out.println("Переведено на счет #" + accountNum + " в банке " + bankCode);
+    }
+}
+
+class BasketDemo {
+    public static void main(String[] args) {
+        Basket b1 = new Basket();
+        Basket b2 = new Basket();
+        Basket b3 = new Basket();
+        System.out.print("b1: ");
+        b1.pay(1200.0);
+        System.out.print("b2: ");
+        b2.pay("123456789");
+        System.out.print("b3: ");
+        b3.pay("987654321", "5500");
+    }
+}
+
+
+Листинг 3.15. Пример перегружаемых конструкторов
+class Vehicle {
+    int passengers;
+    private int wheels;
+    private int maxspeed;
+    int burnup;
+
+    Vehicle() {
+        this.passengers = 4;
+        this.wheels = 4;
+        this.maxspeed = 160;
+        this.burnup = 13;
+    }
+
+    Vehicle(int passengers, int wheels, int maxspeed, int burnup) {
+        this.passengers = passengers;
+        this.wheels = wheels;
+        this.maxspeed = maxspeed;
+        this.burnup = burnup;
+    }
+}
+
+
+Листинг 3.16. Пример замены дублирующегося кода
+class Vehicle {
+    int passengers;
+    private int wheels;
+    private int maxspeed;
+    int burnup;
+
+    Vehicle() {
+        this(4, 4, 160, 13);
+    }
+
+    Vehicle(int passengers, int wheels, int maxspeed, int burnup) {
+        this.passengers = passengers;
+        this.wheels = wheels;
+        this.maxspeed = maxspeed;
+        this.burnup = burnup;
+    }
+
+    double distance(int interval) {
+        return distance((double) interval);
+    }
+
+    double distance(double interval) {
+        double value = this.maxspeed * interval;
+        return value;
+    }
+}
+
+
+Листинг 3.17. Пример статических методов
+class Factorial {
+    static long computeI(int n) {
+        long result = 1;
+        for (int i = 1; i <= n; i++)
+            result *= i;
+        return result;
+    }
+
+    static long computeR(int n) {
+        if (n == 1) return n;
+        return computeR(n - 1) * n;
+    }
+}
+
+class FactorialDemo {
+    public static void main(String[] args) {
+        System.out.println("Вычисление факториала в цикле:");
+        for (int i = 6; i > 0; i--) {
+            System.out.println(i + "! = " + Factorial.computeI(i));
+        }
+        System.out.println("Вычисление факториала рекурсивным методом:");
+        for (int r = 1; r <= 6; r++) {
+            System.out.println(r + "! = " + Factorial.computeR(r));
+        }
+    }
+}
+
+
+Листинг 3.18. Пример статического блока
+class StaticBlock {
+    static double rootOf9;
+    static double rootOf27;
+    int number;
+
+    static {
+        System.out.println("Инициализация статических членов класса...");
+        rootOf9 = Math.sqrt(9.0);
+        rootOf27 = Math.sqrt(27.0);
+    }
+
+    StaticBlock(int number) {
+        System.out.println("Инициализация переменных экземпляра класса...");
+        this.number = number;
+    }
+}
+
+class StaticBlockDemo {
+    public static void main(String[] args) {
+        System.out.println("Корень из 9 равен " + StaticBlock.rootOf9);
+        System.out.println("Корень из 27 равен " + StaticBlock.rootOf27);
+        StaticBlock sb1 = new StaticBlock(4);
+        System.out.println("sb1.number = " + sb1.number);
+        StaticBlock sb2 = new StaticBlock(16);
+        System.out.println("sb2.number = " + sb2.number);
+    }
+}
+
+
+Листинг 3.19. Пример наследования класса
+class Auto extends Vehicle {
+    boolean sunroof;
+}
+
+public class ExtendsVehicleDemo {
+    public static void main(String[] args) {
+        Auto bmw = new Auto();
+        bmw.sunroof = true;
+        System.out.println("Путь, пройденный за 1.5 часа: " + bmw.distance(1.5) + " км.");
+        System.out.println("Мах.скорость: " + bmw.getMaxSpeed() + " км/ч.");
+        System.out.println("Наличие люка: " + bmw.sunroof);
+    }
+}
+
+
+Листинг 3.20. Пример вызова метода надкласса
+class Vehicle {
+    public String toString() {
+        return "Vehicle(passengers=" + passengers + ";" +
+            "wheels=" + wheels + ";" +
+            "maxspeed=" + maxspeed + ";" +
+            "burnup=" + burnup + ");";
+    }
+}
+
+class Auto extends Vehicle {
+    boolean sunroof;
+
+    Auto(boolean sunroof) {
+        this(4, 4, 200, 12, sunroof);
+    }
+
+    Auto(int f, int g, int h, int j, boolean sunroof) {
+        super(f, g, h, j);
+        this.sunroof = sunroof;
+    }
+}
+
+class VehicleOverrideDemo {
+    public static void main(String[] args) {
+        Vehicle v = new Vehicle(2, 2, 100, 9);
+        Auto a = new Auto(2, 4, 180, 12, true);
+        System.out.println("Vehicle.toString(): " + v.toString());
+        System.out.println("Auto.toString(): " + a.toString());
+    }
+}
+
+
+Листинг 3.21. Пример полиморфизма
+class PolyVehicleDemo {
+    public static void main(String[] args) {
+        Auto a = new Auto(true);
+        Vehicle v = new Vehicle();
+        Vehicle[] pvd = {a, v};
+        for (int i = 0; i < pvd.length; i++) {
+            System.out.println(pvd[i].toString());
+        }
+    }
+}
+
+
+Листинг 3.22. Пример абстрактного класса
+abstract class Shape {
+    abstract double area();
+}
+
+class Point extends Shape {
+    public String toString() { return "Точка"; }
+    double area() { return 0; }
+}
+
+class Triangle extends Shape {
+    int cathetus1;
+    int cathetus2;
+
+    Triangle(int cathetus1, int cathetus2) {
+        this.cathetus1 = cathetus1;
+        this.cathetus2 = cathetus2;
+    }
+
+    public String toString() { return "Треугольник"; }
+    double area() {
+        return ((cathetus1 * cathetus2) / 2.0);
+    }
+}
+
+class Circle extends Shape {
+    int radius;
+
+    Circle(int radius) {
+        this.radius = radius;
+    }
+
+    public String toString() { return "Круг"; }
+    double area() {
+        return ((radius * radius) * 3.14);
+    }
+}
+
+public class ShapeDemo {
+    public static void main(String[] args) {
+        Point p = new Point();
+        Triangle t = new Triangle(5, 3);
+        Circle c = new Circle(9);
+        Shape[] s = {p, t, c};
+        System.out.println("Расчет площади фигур");
+        for (int i = 0; i < s.length; i++) {
+            System.out.println(s[i].toString() + " :" + s[i].area());
+        }
+    }
+}
+
+
+Листинг 3.23. Пример проверяемого исключения
+class DivisionByZeroException extends Exception {
+    public String getMessage() {
+        return "Деление на ноль запрещено!";
+    }
+}
+
+class ExceptionDemo {
+    private static double divide(double dividend, double divisor)
+        throws DivisionByZeroException {
+        if (divisor == 0) {
+            throw new DivisionByZeroException();
+        }
+        return dividend / divisor;
+    }
+
+    public static void main(String[] args) {
+        try {
+            divide(8, 0);
+        } catch (DivisionByZeroException dz) {
+            System.out.println(dz.getMessage());
+        }
+    }
+}
+
+
+Листинг 3.24. Реализация расширенного интерфейса
+interface A {
+    void metodA();
+}
+
+interface B extends A {
+    void metodB();
+}
+
+class IExample implements B {
+    public void metodA() { System.out.println("Метод A"); }
+    public void metodB() { System.out.println("Метод B"); }
+}
+
+public class IExampleDemo {
+    public static void main(String[] args) {
+        IExample ie = new IExample();
+        ie.metodA();
+        ie.metodB();
+    }
+}
+
+
+Листинг 3.25. Пример использования оператора instanceof
+public class InstanceOfDemo {
+    public static void main(String[] args) {
+        Auto a = new Auto();
+        Vehicle v = new Vehicle();
+        Vehicle[] va = {a, v};
+        for (int i = 0; i < va.length; i++) {
+            System.out.println(va[i].toString());
+            if (va[i] instanceof Moveable) {
+                Moveable m = (Moveable) va[i];
+                m.move(10 + i * 34, 34);
+            }
+        }
+    }
+}
+
+
+Листинг 5.1.Пример защиты от деления на ноль
+class SecureDivisionOp {
+
+public static void main(String[] args) {
+int result;
+
+   for (int divisor = -5; divisor <=5; divisor++)
+   {
+    result = divisor != 0 ? 100 / divisor : 0;
+    if (result !=0) (
+    System.out.println("100 / " + divisor + " = " + result);
+
+    }
+  }
+}
+
+}
+
+
+Листинг 5.2.Пример вывода двоичной
+import java.io.PrintStream;
+
+public class ShowBits {
+
+private int numbits;
+
+public ShowBits(int numbits) {
+   this.numbits = numbits;
+}
+public String getBinaryForm(long val) (
+   long mask = 1;
+   String form ="";
+   mask <<= numbits - 1;
+
+   int spaser = 0;
+   for(; mask != 0; mask >>>= 1) {
+
+     if ((val & mask) != 0) {
+     form+= "1";
+     } else {
+     form+= "0";
+     }
+
+     spacer++;
+     if ((spacer % 8)	== 0)	{
+     form += "	";
+     spacer= O;
+     }
+   }
+   return form;
+}
+
+
+Листинг 5.3.Пример шифрования данных
+import java.io.*;
+import sun.misc.*;
+
+publ c class Base64Demo {
+public static void main(String[] args) {
+
+if (args.length == 0) {
+System.out.println("usage: Base64Demo text11);
+System.exit(l);
+}
+
+String text= args[0];
+BASE64Encoder enc= new BASE64Encoder();
+String encoded= enc.encode(text.getBytes());
+enc= null;
+
+String decoded= null; 
+try {
+   BASE64Decoder dee= new BASE64Decoder();
+   decoded= new String(dec.decodeBuffer(encoded));
+   dee= null;
+} catch (IOException ioe) {
+   ioe.printStackTrace();
+}
+
+System.out.println("Закодировано:" + encoded);
+System.out.println("Декодировано:" + decoded);
+
+encoded= null;
+decoded= null;
+}
+}
+
+
+Листинг 5.4.Пример вычисления факториала
+long computeI(int n) {
+long result= 1;
+
+for (inti= l; i <= n; i++)
+result*= i;
+
+return result;
+}
+
+long computeR(int n) { if (n == 1) return n;
+return computeR(n - 1) * n;
+}
+}
+public static void rnain(String[] args) 
+{ Factorial f = new Factorial();
+Systern.out.println("Факториал рассчитанный в цикле");
+for (int i = 6;	i > 0;	i--) {
+System.out.println(i + "1 = 0	+ f.cornputeI(i));
+}
+
+Systern.out.println("Факториал, рассчитанный с помощью рекурсии");
+for (int r = 1; r <=	6; r++) {
+Systern.out.println(t + "! = " + f.computeR(r));
+}
+
+}
+
+}
+
+Листинг 5.5.Пример рекурсивного просмотра содержимого папки
+public static void sameDateToDirFiles(String dir) {
+long modified = System.currentTimeMillis();
+
+File walkDir = new File(dir);
+String[] dirList = walkDir.list();
+for (inti= 0; i < dirList.length; i++) {
+   File f = new File(dirList[i]);
+   if (f.isDirectory()) {
+   sameDateToDirFiles(f.getPath()); 
+   continue;
+}
+
+f.setLastModified(modified);
+
+}
+
+}
+
+
+Листинг 5.6.Пример сортировки чисел по пузырьковому алгоритму
+class BubbleSort {
+
+static void sort(int nums[]) {
+int t;
+for (int a= 1; a< nums.length; a++) {
+   for (int b = nums.length - 1; b >= a; b--) {
+   if (nums[b - 1] > nums[b]) {
+   t = nums[b - 1];
+   nums[b - 1] = nums[b]; 
+   nums[b] = t;
+  }
+ }  
+}
+}
+
+}
+
+public class BubbleSortDemo {
+
+public static void main(String[] args) {
+
+int nums[] = {99, -10, 23, 123972, 17, -654, 46, 87, -9};
+
+System.out.print(*Исходный порядок массива:*);
+for (inti= O; i < nums.length; i++) System.out.print(nums[i] +" •);
+
+System.out.println();
+BubbleSort.sort(nums);
+
+System.out.print("Новый порядок:");
+for (inti= O; i < nums.length; i++)
+System.out.print(nums[i] +" •);
+
+System.out.println();
+}
+}
+
+
+Листинг 5.7.Пример сортировки символов по алгоритму Хоара
+class QuickSort {
+
+static void sort(char items[]) { 
+quicksort(items, 0, items.length - l);
+}
+
+private static void quicksort(char items[], int left, int right) {
+int top, bottom;
+char comparand, value;
+
+top= left;
+bottom= right;
+comparand = items[((left+ right) / 2)];
+
+do {
+while ((items[top] < comparand) && (top< right)) top++;
+while ((comparand < items[bottom]) &&
+(bottom> left)) bottom--;
+
+if (top<= bottom) { value= items[top];
+items[top] = items[bottom]; items[bottom] = value; top++;
+bottom--;
+}
+} while (top<= bottom);
+
+if (((right+ 1) - left) == items.length) {
+for (inti= O; i < items.length; i++) 
+System.out.print(items[i]); 
+System.out.println();
+}
+*
+if (left< bottom) quicksort(items, left, bottom);
+if (top< right) quicksort(items, top, right);
+
+class class QuickSortDemo {
+public static void main(String[] args) { 
+char seq[ J	= {'h', 'e', 'd', 'a', 'c' , 'i'};
+
+System.out.print("Исходный порядок символов"); 
+for (inti= 0; i < seq.length; i++) System.out.print(seq[i]);
+
+System.out.println(); QuickSort.sort(seq);
+
+System.out.print("Сортированный порядок"); 
+for (int i = O;	i < seq.length; i++).
+System.out.print(seq[i));
+
+System.out.println();
+
+
+Листинг 5.8.Пример создания стека
+public class Stack { 
+private Object[] theArray; 
+private int topOfStack;
+
+static final int DEFAULT_CAPACITY = 10;
+
+public Stack() {
+theArray = new Object[ DEFAULT_CAPACITY]; 
+topOfStack = -1;
+
+boolean isEmpty() 
+{ return topOfStack == -1;
+
+Object top() { if(isEmpty())
+return null;
+return theArray[ topOfStack ];
+}
+
+void pop() { 
+if(isEmpty()) 
+return; 
+topOfStack--;
+}
+
+Object topAndPop() { 
+if(isEmpty()) return null;
+return theArray[ topOfStack-- ];
+}
+
+void push(Object x) {
+if( topOfStack + 1 == theArray.length doubleArray( );
+theArray[ ++topOfStack J = x;
+}
+
+void makeEmpty() {
+topOfStack= -1;
+}
+
+private void doubleArray() { Object [ ] newArray;
+
+newArray = new Object[ theArray.length * 2 ]; 
+for( inti O; i < theArray.length; i++) { 
+System.arraycopy(theArray, 0, newArray, 0,
+                 theArray.length);
+}
+theArray = newArray;
+}
+
+} 
+
+
+Листинг 6.1.Пример сокращения записи команды вывода
+public class ShortcutOutDemo {
+
+private static PrintStream out= System.out;
+
+public static void main(String[] args) {
+
+out.println("Пример...");
+out.println("...краткой записи команды вывода на консоль...");
+}
+
+}
+
+
+Листинг 6.2.Пример вывода в файл
+import java:io.*; public class MyApp {
+
+public static void main(String[] args) {
+
+try {
+PrintStream errOut =
+new PrintStream(new FileOutputStream("Error.log"));
+System.setErr(errOut);
+
+PrintStream sysOut =
+new PrintStream(new FileOutputStream("Debug.log"));
+System.setOut(sysOut);
+} catch (Exception e) {}
+
+System.out.println("Сообщение о нормальной работе программы") ;
+System.err.println("Сообщение об ошибках");
+
+
+Листинг 6.3.Пример чтения потока вывода внешнего приложения
+import java.io.*;
+
+public class Readinput { 
+String cmd = null; 
+Process proc = null; 
+InputStream input= null;
+
+BufferedReader in= null;
+
+public Readinput(String cmd) throws IOException { 
+this.cmd = cmd;
+
+try {
+proc = Runtime.getRuntime().exec(cmd);
+input= proc.getinputStream();
+in= new BufferedReader(new InputStreamReader(input));
+} catch (IOException ioe) { throw ioe;
+}
+public String readLine() throws IOException {
+String line = in.readLine();
+while ((line== "\r") | {line=="")){ 
+line= in.readLine();
+}
+return line;
+
+public void close() {
+try { in.close(); input.close(); proc.destroy();
+} catch (IOException ioe) { ioe.printStackTrace();
+} finally { in= null; input= null; proc = null;
+}
+}
+
+public static void main(String[] args) { String cmd = null;
+Readinput ri = null;
+if (args.length > 0) {
+cmd = args[O];
+} else {
+cmd = "ping localhost";
+}
+
+try {
+
+ri = new Readinput(cmd); 
+String line= null;
+while ((line= ri.readLine()) 1= null) 
+if (line != "\r")
+{ System.out.println("java:>" +line);}
+
+} catch (IOException ioe) { 
+ioe.printStackTrace();
+
+} finally { ri.close(); ri = null;
+}
+
+}
+
+}
+
+
+Листинг 6.4.Пример запуска внешнего приложения
+public class ExecProcess {
+
+public static void main(String[] args) { 
+try {
+
+Runtime.getRuntime().exec ("notepad. exe") ;
+
+} catch (IOException ioe) { 
+ioe.printStackTrace();
+}
+}
+
+}
+
+
+Листинг 6.5.Пример чтения даты и времени в программе
+public class DatePart {
+
+private Date fromDate = null;
+private SimpleDateFormat formatter= null;
+
+public DatePart(Date anyDate) { 
+fromDate = anyDate;
+formatter = new SimpleDateFormat("EEE MMM dd hh:mm:ss yyyy",
+Locale.getDefault());
+} 
+
+public int getDay() {
+formatter.applyPattern("d");
+return Integer.parseint(formatter.format(fromDate));
+}
+
+public int getMonth() {
+formatter.applyPattern("M");
+return Integer.parseint(formatter.format(fromDate));
+} 
+
+public int get Year() {
+formatter.applyPattern("y");
+return Integer.parseint(formatter.format(fromDate));
+} 
+
+public int getHour()• {
+formatter.applyPattern("h");
+return Integer.parseint(formatter.format(fromDate));
+} 
+
+public int getMinute() { formatter.applyPattern("m");
+return Integer.parseint(formatter.format(fromDate));
+}
+
+}
+
+
+Листинг 7.1.Рекурсивное удаление папок и файлов
+public static void deleteDir(String dirPath) {
+File walkDir = new File(dirPath); 
+
+String[] dirList = walkDir.list(); 
+
+for (int.i = O; i < dirList.length; i++) {
+
+File f = new File(dirList[i]); 
+if (f.isDirectory()) {
+    deleteDir(f,getPath());
+    }
+    f.delete();
+}
+walkDir.delete();
+
+}
+
+
+Листинг 7.2.Пример чтения двоичного файла
+File file= new File("file.bin"); 
+InputStream is= new FileinputStream(file);
+long length= file.length();
+
+if (length> Integer.MAX_VALUE) {
+throw new IOException("Файл"+ file.getName() +
+                      "Слишком длинный!" ) ;
+}
+
+byte[) bytes = new byte[(int)length];
+
+int offset= O; int numRead = 0;
+while ()ffset,< bytes.length &&
+    (numRead=is read(bytes, offset,
+                    bytes.length-offset)) >= 0) {
+offset+= numRead;
+}
+
+if (offset< bytes.length) {
+throw new IOException("Не удалось прочитать файл" + 
+   file.getName() + "целиком");
+}
+
+is.close();
+
+
+Листинг 7.3.Пример фильтрации потока ввода
+class GrepinputStream extends FilterinputStream {
+
+String substring= null;
+BufferedReader br;
+
+public GrepinputStream(InputStream in, String substring)
+{
+   super(in);
+
+   this.br = new BufferedReader(new 
+InputStrearnReader(in));
+   this.substring= substring;
+}
+
+public final String readLine() throws IOException { 
+    String line;
+
+    do {
+       line = br.readLine();
+     ) while ((line != null) && line.indexOf(substring) == -1);
+  }
+}
+
+
+Листинг 7.4.Демонстрация класса GrepInputDtream
+public class Grep {
+
+public static void rnain(String[] args) {
+
+if ((args.length == 0) 11 (args.length > 2)) {
+Systern.out.println("Usage: java Grep <образец> <имя_файла>" ) ;
+Systern.exit(0);
+}
+
+try {
+FileinputStrearn fis = new FileinputStream(args[l]); 
+GrepinputStrearn gis =
+   new GrepinputStream((InputStrearn) fis, args[0]);
+   
+String line; 
+for (;;) { 
+  line= gis.readLine(); 
+  if (line== null) break;
+  System.out.println(line);
+}
+gis.close();
+
+ } catch (IOException ioe) { 
+   System.err.println(ioe.getMessage());
+}
+
+}
+
+}
+
+
+Листинг 7.5.пример создания архива ZIP
+import java.util.zip.*;
+import java.'io.* ;
+
+class ZipDir {
+
+public static void exec(String zipFile, String zippedDir) 
+throws FileNotFoundException, IOException {
+
+ZipOutputStream zos = new ZipOutputStream( 
+new FileOutputStream(zipFile));
+
+walkingDir(zos, zippedDir); 
+zos.close();
+} 
+
+public static void walkingDir (ZipOutputStream zos, String zippedDir) {
+
+File zipDir = new File(zippedDir); String[] dirList = zipDir.list();
+for (inti= O; i < dirList.length; i++) {
+File f = new File(dirList[i]); if (f.isDirectory()) {
+String filePath = f.getPath(); walkingDir (zos, filePath); continue;
+} else {
+try {
+byte[] readBuffer = new byte[2048]; int bytesReaded = O;
+String fullPath = zippedDir + "\\" + f.getPath(); System.out.println("\t apxI-rnHPyeTcsi: " + fullPath); FileinputStream fis =
+new FileinputStrearn(fullPath); ZipEntry ze = new ZipEntry(fullPath); zos.putNextEntry(ze);
+while ((bytesReaded = fis.read(readBuffer)) != -1){ zos.write(readBuffer, 0, bytesReaded);
+}
+fis.close();
+} catch (FileNotFoundException fnfe) { System.out.println(fnfe.getMessage());
+} catch (IOException ioe) { System.out.println(ioe.getMessage());
+}
+}
+}
+}
+
+public class ZipDirTest {
+
+public static void main(String[] args) {
+
+if (args.length !=2) { 
+System.out.println(usage: java ZipDirTest
+                   <имя_фрхива> <имя_папки>");
+  return;
+}
+
+String zipFile = args[0]; 
+String zippedDir = args[l];
+
+try {
+   System.out.println("Начало архивации папки:
++ zippedDir);
+ZipDir.exec(zipFile, zippedDir); \
+System.out.println("Архив был записан успешно:"
++ zipFile);
+} catch (FileNotFoundException infe) { System.out.println(fnfe.getMessage());
+} catch (IOException ioe) { System.out.println(ioe.getMessage());
+}
+}
+
+
+Листинг 7.6.Пример чтения XML-документа с помощью DOM
+import java.io*;
+import javax.xml.parses.*;
+import java.io.*;
+import org.w3c.dom.*;
+
+class DomPrint {
+
+private static void printindentation(int level) {
+for (inti= O; i < level; i ++) {
+System.out.print("	");
+}
+
+private static void print(Node node, int level) {
+
+  System.out.println(""); 
+  printindentation(level);
+}
+System.out.println(node.getNodeName().toString() + ":");
+
+NamedNodeMap attributes= node.getAttributes();
+
+if (attributes.getLength() > 0) {
+for (inti= 0; i < attributes.getLength(); i++) { 
+Node attribute= attributes.item(i);
+printindentation(level);
+Strings="."+ attribute.getNodeName() + "="; 
+System.out.println(s + attribute.getNodeValue());
+}
+level--;
+}
+}
+
+String value= node.getNodeValue();
+value= (value== null ?	"" value.trim()); 
+if (value.length() > 0)	{
+printindentation(level); 
+System.out.println(value);
+}
+
+if (node.hasChildNodes()) {
+level++;
+NodeList children= node.getChildNodes();
+for (inti= 0; i < children.getLength(); i ++) { 
+Node child= children.item(i);
+print(child, level);
+}
+}
+}
+
+File docFile = new File(args[O]); try {
+DocumentBuilderFactory factory= DocumentBuilderFactory.newinstance();
+factory.setignoringComments(true);
+
+DocumentBuilder builder= factory.newDocumentBuilder();
+
+Document doc= builder.parse(docFile);
+ 
+print(doc.getDocumentElement(), O);
+} catch(Exception ex) { System.out.println(ex);
+}
+}
+}
+
+
+Листинг 7.7.Печать содержимого файла XML по модели SAX
+import java.io.*;
+import javax.xml.parsers.*; 
+import org.xml.sax.*;
+import org.xml.sax.helpers.*;
+
+class SaxPrint extends DefaultHandler {
+
+
+public void startDocument() throws SAXException { 
+System.out.println("Начало документа");
+
+public void endDocument() throws SAXException { 
+System.out.println(""); 
+System.out.println("Конец документа");
+}
+
+public void startElement(String uri, String lName, String qName, 
+          Attributes attribs)
+throws SAXException {
+
+System.out.println(""); 
+System.out.println("	Начало" + qName);
+
+if (attribs.getLength() > 0) {
+  for (inti= O; i < attribs.getLength(); i ++) {
+    System.out.println("	." + attribs.getQName(i) +
+      "=" + attribs.getValue(i));
+  }
+ }
+}
+
+public void endElement(String uri, String lName, String qName) 
+throws SAXException {
+System.out.println(" KoHeu;" + qName);
+} 
+
+public void characters(char[] data, int start, int length) 
+throws SAXException {
+
+StringBuffer buf = new StringBuffer(length); 
+buf.append(data, start, length);
+if (buf.toString().trim().length() > 0) { 
+System.out.println(" "+ buf);
+}
+}
+
+public static void main(String[] args) {
+
+System.out.println("Usage: java SaxPrint имя_файла_xml");
+
+System.exit(O);
+}
+
+try {
+File docFile = new File("y:\test.xml");
+
+SAXParserFactory factory=
+                 SAXParserFactory.newinstance(); 
+SAXParser parser= factory.newSAXParser();
+
+parser.parse(docFile, new SaxPrint() );
+
+} catch(Exception ex) { 
+  System.out.println(ex);
+}
+
+} 
+}
+
+
+Листинг 7.8.Пример XSLT трансформации
+class Transform {
+public static void main(String[) args) {
+
+if (args.length < 1) 
+   { System.out.println(*usage: java
+                                 Transform имя_файла_xsl имя_файлаxml");
+   System.exit(0);
+}
+
+File xslFile = new File(args[0)); 
+File xmlFile = new File(args[l));
+
+StreamSource xslSource = new StreamSource(xslFile); 
+StreamSource xmlSource = new StreamSource(xmlFile); 
+StreamResult outResult = new StreamResult(System.out);
+
+try {
+
+     TransformerFactory factory=
+                    TransformerFactory.newinstance(); 
+     Transformer transformer=
+                    factory.newTransformer(xslSource);
+
+     transformer.transform(xmlSource, outResult);
+  }  catch(Exception ex) { 
+     System.out.println(ex);
+  }
+ }
+} 
